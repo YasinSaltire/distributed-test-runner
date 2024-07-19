@@ -1,0 +1,17 @@
+{
+  "name": "test-automation",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "downloads-folder": "^3.0.3",
+    "open": "^10.1.0"
+  }
+}
