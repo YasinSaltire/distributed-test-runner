@@ -10,6 +10,17 @@ import os from 'os';
 const execAsync = promisify(exec);
 const osType = os.type();
 
+async function countFiles(directory) {
+    try {
+        const command = `ls -1 ${directory} | wc -l`;
+        const { stdout } = await execAsync(command);
+        return parseInt(stdout.trim(), 10);
+    } catch (error) {
+        console.error('Error counting files:', error.message);
+        return null;
+    }
+}
+
 async function getPrivateIP() {
     let isWindows = osType.includes('Windows') ? true : false;
     let command = "";
@@ -28,6 +39,8 @@ const DEFAULT_SERVER20222_DIR = "//192.168.50.73/ForReview/automated-testing/";
 
 const srv22 = new Server22();
 const downloads = downloadsFolder().replace(/\\/g, '/');
+console.log(`there are ${await countFiles(downloads)} files in downloads`);
+
 let chokidarScanComplete = false;
 const jobs = [];
 async function testAssessment(fileName) {
@@ -47,52 +60,13 @@ async function fileExists(file) {
     return result.stdout.trim() === "yes";
 }
 
-const watcher = chokidar.watch(downloads + '/', { persistent: true });
-watcher.on('ready', () => {
-    chokidarScanComplete = true;
-    console.log("- Chokidar has finished scanning the downloads folder");
-});
-// srv22.sendFile(this.DOWNLOADS + this.logFileName, "passed");
-
-watcher.on('add', async (filePath) => {
-    if (!chokidarScanComplete) return;
-
-    console.log("*** New file added ***");
-    const fileName = path.basename(filePath);
-    const fullPathToFile = path.join(downloads, fileName);
-    const isReport = !fileName.startsWith("Log-");
-    const companionFileName = isReport ? "Log-" + fileName : fileName.slice(4);
-    const companionFullPath = path.join(downloads, companionFileName);
-    let log = null;
-    let report = null;
-    const theFilesExist = await fileExists(fullPathToFile) && await fileExists(companionFullPath);
-    // files will only be uploaded to server2022 if both report and log are found
-    if (theFilesExist) {
-        if (fullPathToFile.startsWith("Log-")) {
-            log = fullPathToFile;
-            report = companionFullPath;
-        } else {
-            log = companionFullPath;
-            report = fullPathToFile;
-        }
-        const failed = await hasFailed(report);
-        let destination = failed ? "failed" : "passed";
-        console.log("copying to srv2022");
-        await srv22.sendFile(log, destination);
-        await srv22.sendFile(report, destination);
-        const log1 = `[${IP} ${(new Date()).toISOString()}] ${log} uploaded to Server2022`;
-        const log2 = `[${IP} ${(new Date()).toISOString()}] ${report} uploaded to Server2022`;
-        await srv22.logToServer2022(log1);
-        await srv22.logToServer2022(log2);
-    }
-});
-
 let keepLooping = true;
 let startNewTest = true;
 
 let line = null;
 let job = null;
 let masterListEmpty = false;
+let baselineFileCount = await countFiles(downloads);
 while (keepLooping) {
 
     if (startNewTest) {
@@ -120,6 +94,13 @@ while (keepLooping) {
         await job.startTesting();
         jobs.push(job);
         startNewTest = false;
+    }
+
+    let fileCount = await countFiles(downloads);
+
+    if (fileCount === baselineFileCount + 2) {
+        baselineFileCount = fileCount;
+        startNewTest = true;
     }
 
     const jobHasFinished = job.finished;
