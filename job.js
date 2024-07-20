@@ -86,17 +86,9 @@ export class Job {
         console.log("___START___");
         this.timer.start();
         this.started = true;
-        try {
-            await open(this.fullTestUrl, { background: true });
-        } catch (error) {
-            console.error(error.message);
-        }
+        await open(this.fullTestUrl, { background: true });
         const logStarted = `[${this.privateIP.trim()} ${(new Date()).toISOString()}] Started a test (${this.testTitle})`;
         console.log(logStarted);
-        try {
-            await this.srv22.logToServer2022(logStarted);
-        } catch (error) {
-            console.error(error.message);
-        }
+        await this.srv22.logToServer2022(logStarted);
     };
 }
