@@ -81,34 +81,28 @@ export class Server22 {
     };
 
     appendLineToFile = async (line, fileRelativeToDirectory) => {
-        if (line.length < 4) {
+        if (!line.length) {
             console.error("Provided line is of insufficient length");
             return 0;
         }
+
+        console.log("Attempting to write to log");
 
         const filePath = path.join(this.directory, fileRelativeToDirectory);
 
         // const command = `echo "${line}" >> ${this.directory}${fileRelativeToDirectory}`; 
 
-        try {
-            fs.appendFile(filePath, line + '\n', { encoding: 'utf8' }, (err) => {
-                if (err) {
-                    console.error("Error writing to file:", err.message);
-                } else {
-                    console.log("Line appended successfully.");
-                    return 1;
-                }
-            });
-        } catch (error) {
-            console.error(error.message);
-        }
+        fs.appendFile(filePath, line + '\n', { encoding: 'utf8' }, (err) => {
+            if (err) {
+                console.error("Error writing to file:", err.message);
+            } else {
+                console.log(`Line appended successfully to ${fileRelativeToDirectory}`);
+                return 1;
+            }
+        });
     };
 
     logToServer2022 = async (stringToLog) => {
-        try {
-            await this.appendLineToFile(stringToLog.trim(), "log.txt");
-        } catch (error) {
-            console.error(error.message);
-        }
+        await this.appendLineToFile(stringToLog, "log.txt");
     };
 }
