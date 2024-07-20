@@ -154,7 +154,7 @@ while (keepLooping) {
     if (timedOut) {
         // write to timed-out.txt
         const logTimedOut = `[${job.privateIP} ${(new Date()).toISOString()}] (${job.testTitle}) may have timed out`;
-        await srv22.writeLog(logTimedOut);
+        await srv22.logToServer2022(logTimedOut);
         // ones in timed-out.txt will need to be run again with different setting
         await job.srv22.appendLineToFile(line, "timed-out.txt");
     }
