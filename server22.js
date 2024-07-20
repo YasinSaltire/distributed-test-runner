@@ -92,14 +92,9 @@ export class Server22 {
 
         // const command = `echo "${line}" >> ${this.directory}${fileRelativeToDirectory}`; 
 
-        fs.appendFile(filePath, line + '\n', { encoding: 'utf8' }, (err) => {
-            if (err) {
-                console.error("Error writing to file:", err.message);
-            } else {
-                console.log(`Line appended successfully to ${fileRelativeToDirectory}`);
-                return 1;
-            }
-        });
+        await fs.promises.appendFile(filePath, line + '\n');
+        console.log(`Line appended successfully to ${fileRelativeToDirectory}`);
+        return 1;
     };
 
     logToServer2022 = async (stringToLog) => {
