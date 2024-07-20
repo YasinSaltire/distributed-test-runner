@@ -22,13 +22,7 @@ async function getPrivateIP() {
     return result.stdout.trim();
 }
 
-let IP = null;
-
-try {
-    IP = await getPrivateIP();
-} catch (error) {
-    console.error(error.message);
-}
+let IP = await getPrivateIP();
 
 const DEFAULT_SERVER20222_DIR = "//192.168.50.73/ForReview/automated-testing/";
 
@@ -38,12 +32,8 @@ let chokidarScanComplete = false;
 const jobs = [];
 async function testAssessment(fileName) {
     const fullPathToReport = path.join(downloads, fileName);
-    try {
-        const result = await execAsync(`grep -q "FAILED" ${fullPathToReport} && echo failed || echo passed`);
-        return result.stdout.trim();
-    } catch (error) {
-        console.error(error.message);
-    }
+    const result = await execAsync(`grep -q "FAILED" ${fullPathToReport} && echo failed || echo passed`);
+    return result.stdout.trim();
 }
 
 async function hasFailed(fileName) {
@@ -75,9 +65,9 @@ watcher.on('add', async (filePath) => {
     const companionFullPath = path.join(downloads, companionFileName);
     let log = null;
     let report = null;
-
+    const theFilesExist = await fileExists(fullPathToFile) && await fileExists(companionFullPath);
     // files will only be uploaded to server2022 if both report and log are found
-    if (await fileExists(fullPathToFile) && await fileExists(companionFullPath)) {
+    if (theFilesExist) {
         if (fullPathToFile.startsWith("Log-")) {
             log = fullPathToFile;
             report = companionFullPath;
@@ -106,34 +96,30 @@ let masterListEmpty = false;
 while (keepLooping) {
 
     if (startNewTest) {
-        try {
-            line = await srv22.getLastLine();
+        line = await srv22.getLastLine();
 
-            if (line.length === 0) {
-                keepLooping = false;
-                masterListEmpty = true;
-                console.log("nothing more to do");
-            }
-
-            await srv22.deleteLastLine();
-            job = new Job(line.trim());
-            job.os = osType;
-            job.privateIP = IP;
-
-            if (masterListEmpty) {
-                const logListEmpty = `[${job.privateIP} ${(new Date()).toISOString()}] Master list is empty`;
-                await srv22.logToServer2022(logListEmpty);
-                break;
-            }
-
-            const logFetchedLine = `[${job.privateIP} ${(new Date()).toISOString()}] Fetched ${job.testTitle} and removed it from master list`;
-            await srv22.logToServer2022(logFetchedLine);
-            await job.startTesting();
-            jobs.push(job);
-            startNewTest = false;
-        } catch (error) {
-            console.error(error.message);
+        if (line.length === 0) {
+            keepLooping = false;
+            masterListEmpty = true;
+            console.log("nothing more to do");
         }
+
+        await srv22.deleteLastLine();
+        job = new Job(line.trim());
+        job.os = osType;
+        job.privateIP = IP;
+
+        if (masterListEmpty) {
+            const logListEmpty = `[${job.privateIP} ${(new Date()).toISOString()}] Master list is empty`;
+            await srv22.logToServer2022(logListEmpty);
+            break;
+        }
+
+        const logFetchedLine = `[${job.privateIP} ${(new Date()).toISOString()}] Fetched ${job.testTitle} and removed it from master list`;
+        await srv22.logToServer2022(logFetchedLine);
+        await job.startTesting();
+        jobs.push(job);
+        startNewTest = false;
     }
 
     const jobHasFinished = job.finished;
