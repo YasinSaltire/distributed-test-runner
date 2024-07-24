@@ -1,2 +1,7 @@
 node_modules/
 .state
+.logfile
+.current
+.logfilelocation
+.masterlist
+.time
