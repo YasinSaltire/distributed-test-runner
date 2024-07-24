@@ -1,13 +1,13 @@
 #!/bin/bash
 
 DOWNLOADS_DIR="$HOME/Downloads"
+NETWORK_STORAGE="//192.168.50.73/ForReview/Casio/fx-CG100 emulator/automated-testing"
 CXT=$1
-IP=$2
+NICKNAME=$2
 DEV="--dev"
 dev="-d"
 PROD="--prod"
 prod="-p"
-NETWORK_STORAGE="//192.168.50.73/ForReview/Casio/fx-CG100 emulator/automated-testing"
 
 if [[ $CXT == $DEV || $CXT == $dev ]]; then
     echo "in dev"
@@ -15,13 +15,13 @@ if [[ $CXT == $DEV || $CXT == $dev ]]; then
     echo "Setting storage location to $NETWORK_STORAGE"
 fi
 
-echo $IP
+echo $NICKNAME
 TIMESTAMP=$(date +"%Y-%m-%dT%H_%M_%SZ")
 ALL_LISTS="$NETWORK_STORAGE/all-tests.txt"
-LOG_FILE="$NETWORK_STORAGE/$IP/$TIMESTAMP/log.txt"
-TIMED_OUT_LIST="$NETWORK_STORAGE/$IP/$TIMESTAMP/timed-out.txt"
-FAILED_DIR="$NETWORK_STORAGE/$IP/$TIMESTAMP/failed"
-PASSED_DIR="$NETWORK_STORAGE/$IP/$TIMESTAMP/passed"
+LOG_FILE="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/log.txt"
+TIMED_OUT_LIST="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/timed-out.txt"
+FAILED_DIR="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/failed"
+PASSED_DIR="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/passed"
 LOCAL_LOG_FILE=".logfilelocation"
 MASTER_LIST=".masterlist"
 touch "$LOCAL_LOG_FILE"
