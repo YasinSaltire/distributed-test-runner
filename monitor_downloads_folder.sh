@@ -15,11 +15,11 @@ if [[ $CXT == $DEV || $CXT == $dev ]]; then
 fi
 
 TIMESTAMP=$(date +"%Y-%m-%dT%H_%M_%SZ")
-ALL_LISTS="$NETWORK_STORAGE/all-tests.txt"
 LOG_FILE="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/log.txt"
 TIMED_OUT_LIST="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/timed-out.txt"
 FAILED_DIR="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/failed"
 PASSED_DIR="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/passed"
+ALL_LISTS="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/all-tests.txt"
 LOCAL_LOG_FILE=".logfilelocation"
 MASTER_LIST=".masterlist"
 touch "$LOCAL_LOG_FILE"
@@ -33,6 +33,7 @@ touch "$LOG_FILE"
 touch "$TIMED_OUT_LIST"
 touch .state
 echo "1" >> .state
+cp "$NETWORK_STORAGE/all-tests-backup.txt" "$ALL_LISTS"
 echo "$ALL_LISTS" >> "$MASTER_LIST"
 
 log_action() {
