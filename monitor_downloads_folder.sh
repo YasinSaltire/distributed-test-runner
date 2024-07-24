@@ -1,8 +1,8 @@
 #!/bin/bash
 
 DOWNLOADS_DIR="$HOME/Downloads"
-IP=$2
 CXT=$1
+IP=$2
 DEV="--dev"
 dev="-d"
 PROD="--prod"
@@ -65,20 +65,32 @@ POLL_INTERVAL=3
 
 update_state() {
     state="$1"
+    start_next="1"
+    second_attempt="2"
+    third_attempt="3"
+    fourth_attempt="4"
+    fifth_attempt="5"
     if [[ $state == "1*" ]]; then 
-        echo "2" >> .state
+        log_action "First attempt failed; updating test status to run second attempt ($second_attempt)"
+        echo "$second_attempt" >> .state
     elif [[ $state == "2*" ]]; then
-        echo "3" >> .state
+        log_action "Second attempt failed; updating test status to run third attempt ($third_attempt)"
+        echo "$third_attempt" >> .state
     elif [[ $state == "3*" ]]; then
-        echo "4" >> .state
+        log_action "Third attempt failed; updating test status to run fourth attempt ($fourth_attempt)"
+        echo "$fourth_attempt" >> .state
     elif [[ $state == "4*" ]]; then
-        echo "5" >> .state
+        log_action "Fourth attempt failed; updating test status to run fifth attempt ($fifth_attempt)"
+        echo "$fifth_attempt" >> .state
     elif [[ $state == "5*" ]]; then
-        echo "1" >> .state
+        log_action "Fifth attempt failed; updating test status to run next test ($fourth_attempt)"
+        echo "$start_next" >> .state
     elif [[ $state == "passed" ]]; then
-        echo "1" >> .state
+        log_action "Test passed; updating test status to run next test"
+        echo "$start_next" >> .state
     elif [[ $state == "timed-out" ]]; then
-        echo "1" >> .state
+        log_action "Test timed-out; updating test status to run next test"
+        echo "$start_next" >> .state
     fi
 }
 
@@ -98,6 +110,7 @@ find_html_pairs() {
             if [[ -f "$report_file_path" ]]; then # Corresponding report was also found
                 echo "Pair found: Log file '$file_name' and report file '$report_file'"
                 last_test_state=$(tail -n 1 ".state")
+                log_action "Both files downloaded; last test state: $last_test_state"
                 state=""
                 if grep -q "FAILED" "$report_file_path"; then 
                     destination="$FAILED_DIR"
@@ -106,9 +119,9 @@ find_html_pairs() {
                     destination="$PASSED_DIR"
                     state="passed"
                 fi
+                echo "destination is $destination"
                 upload_files "$report_file_path" "$log_file_path" "$destination"
                 update_state "$state"
-                log_action ""
             else
                 # report and log-pair not ready yet
                 echo "Log file '$file_name' found but report file '$report_file' is missing"
@@ -116,6 +129,8 @@ find_html_pairs() {
         else
             log_file="Log-$file_name"
             log_file_path="$DOWNLOADS_DIR/$log_file"
+            last_test_state=$(tail -n 1 ".state")
+            log_action "Both files downloaded; last test state: $last_test_state"
             
             if [[ -f "$log_file_path" ]]; then
                 echo "Pair found: Log file '$log_file' and report file '$file_name'"
@@ -127,6 +142,7 @@ find_html_pairs() {
                     destination="$PASSED_DIR"
                     state="passed"
                 fi
+                echo "destination is $destination"
                 upload_files "$report_file_path" "$log_file_path" "$destination"
                 update_state "$state"
             else
