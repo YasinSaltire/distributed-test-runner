@@ -10,12 +10,10 @@ PROD="--prod"
 prod="-p"
 
 if [[ $CXT == $DEV || $CXT == $dev ]]; then
-    echo "in dev"
-    NETWORK_STORAGE="/c/Users/yasin/dev"
+    NETWORK_STORAGE=$(grep -m 1 '^dev=' .env | sed 's/^dev=//')
     echo "Setting storage location to $NETWORK_STORAGE"
 fi
 
-echo $NICKNAME
 TIMESTAMP=$(date +"%Y-%m-%dT%H_%M_%SZ")
 ALL_LISTS="$NETWORK_STORAGE/all-tests.txt"
 LOG_FILE="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/log.txt"
