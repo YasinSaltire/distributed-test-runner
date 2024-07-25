@@ -71,6 +71,8 @@ upload_files() {
     mkdir -p "$destination"
     mv "$log_file" "$destination/"
     mv "$report_file" "$destination/"
+
+    log_action "Uploaded $log_file and $report_file to $destination"
 }
 
 POLL_INTERVAL=3
@@ -191,7 +193,7 @@ while true; do
         elapsed_seconds=$(($elapsed_time / 1000))
         echo "elapsed time = $elapsed_seconds"
         last_test=$(tail -n 1 ".current")
-        if [[ "$elapsed_seconds" -gt 60 && -n "$last_test" ]]; then 
+        if [[ "$elapsed_seconds" -gt 1800 && -n "$last_test" ]]; then 
             echo "$last_test" >> "$TIMED_OUT_LIST"
             log_action "Last test has timed out; shutting down Chrome"
             taskkill //IM chrome.exe //F
