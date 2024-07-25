@@ -35,9 +35,11 @@ PASSED_DIR="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/passed"
 ALL_LISTS="$NETWORK_STORAGE/all-tests.txt"
 LOCAL_LOG_FILE=".logfilelocation"
 MASTER_LIST=".masterlist"
+> "$MASTER_LIST"
 touch "$LOCAL_LOG_FILE"
+> "$LOCAL_LOG_FILE"
 echo "$LOG_FILE" >> "$LOCAL_LOG_FILE"
-echo "local .log file created"
+echo "Log file location saved"
 mkdir -p "$(dirname "$LOG_FILE")"
 mkdir -p "$(dirname "$TIMED_OUT_LIST")"
 mkdir -p "$FAILED_DIR"
@@ -136,7 +138,7 @@ find_html_pairs() {
                     state="passed"
                 fi
                 echo "destination is $destination"
-                upload_files "$report_file_path" "$log_file_path" "$destination"
+                # upload_files "$report_file_path" "$log_file_path" "$destination"
                 update_state "$state"
             else
                 # report and log-pair not ready yet
@@ -161,7 +163,7 @@ find_html_pairs() {
                     state="passed"
                 fi
                 echo "destination is $destination"
-                upload_files "$report_file_path" "$log_file_path" "$destination"
+                # upload_files "$report_file_path" "$log_file_path" "$destination"
                 update_state "$state"
             else
                 echo "Report file '$file_name' found but log file '$log_file' is missing"
@@ -195,7 +197,7 @@ while true; do
         last_test=$(tail -n 1 ".current")
         if [[ "$elapsed_seconds" -gt 1800 && -n "$last_test" ]]; then 
             echo "$last_test" >> "$TIMED_OUT_LIST"
-            log_action "Last test has timed out; shutting down Chrome"
+            log_action "Last test has timed out ($elapsed_seconds s); shutting down Chrome"
             taskkill //IM chrome.exe //F
             echo "$last_test timed out"
             echo "1" >> .state
