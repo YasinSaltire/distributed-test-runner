@@ -80,7 +80,7 @@ generate_hyperlink() {
     
 }
 
-trap cleanup EXIT
+trap cleanup EXIT SIGINT
 
 log_action "Starting a new test run"
 
