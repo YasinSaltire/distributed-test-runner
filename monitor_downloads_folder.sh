@@ -9,6 +9,11 @@ dev="-d"
 PROD="--prod"
 prod="-p"
 
+if [[ ! -f .env && ( "$CXT" == "$DEV" || "$CXT" == "$dev" ) ]]; then 
+    echo "Error: no .env file found. Exiting"
+    exit 1
+fi 
+
 if [[ $CXT == $DEV || $CXT == $dev ]]; then
     NETWORK_STORAGE=$(grep -m 1 '^dev=' .env | sed 's/^dev=//')
     echo "Setting storage location to $NETWORK_STORAGE"
@@ -32,6 +37,7 @@ mkdir -p "$PASSED_DIR"
 touch "$LOG_FILE"
 touch "$TIMED_OUT_LIST"
 touch .state
+> .state
 echo "1" >> .state
 cp "$NETWORK_STORAGE/all-tests-backup.txt" "$ALL_LISTS"
 echo "$ALL_LISTS" >> "$MASTER_LIST"
@@ -155,9 +161,10 @@ if [[ -e .state ]]; then
     rm .state
 fi 
 
-touch .state
 touch .time
+> .time
 touch .current
+> .current
 echo 1 >> .state
 
 log_action "Starting to monitor ~/Downloads"
