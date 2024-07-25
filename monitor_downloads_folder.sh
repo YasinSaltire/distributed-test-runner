@@ -1,5 +1,13 @@
 #!/bin/bash
 
+trap "cleanup" EXIT SIGINT
+
+cleanup() {
+    echo "Cleaning up..."
+    log_action "Shutting down scripts"
+    exit 0 
+}
+
 DOWNLOADS_DIR="$HOME/Downloads"
 NETWORK_STORAGE="//192.168.50.73/ForReview/Casio/fx-CG100 emulator/automated-testing"
 CXT=$1
@@ -24,7 +32,7 @@ LOG_FILE="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/log.txt"
 TIMED_OUT_LIST="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/timed-out.txt"
 FAILED_DIR="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/failed"
 PASSED_DIR="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/passed"
-ALL_LISTS="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/all-tests.txt"
+ALL_LISTS="$NETWORK_STORAGE/all-tests.txt"
 LOCAL_LOG_FILE=".logfilelocation"
 MASTER_LIST=".masterlist"
 touch "$LOCAL_LOG_FILE"
@@ -39,7 +47,6 @@ touch "$TIMED_OUT_LIST"
 touch .state
 > .state
 echo "1" >> .state
-cp "$NETWORK_STORAGE/all-tests-backup.txt" "$ALL_LISTS"
 echo "$ALL_LISTS" >> "$MASTER_LIST"
 
 log_action() {
@@ -114,6 +121,8 @@ find_html_pairs() {
             
             if [[ -f "$report_file_path" ]]; then # Corresponding report was also found
                 echo "Pair found: Log file '$file_name' and report file '$report_file'"
+                taskkill //IM chrome.exe //F
+                log_action "Shutting down Chrome"
                 last_test_state=$(tail -n 1 ".state")
                 log_action "Both files downloaded; last test state: $last_test_state"
                 state=""
@@ -139,6 +148,8 @@ find_html_pairs() {
             
             if [[ -f "$log_file_path" ]]; then
                 echo "Pair found: Log file '$log_file' and report file '$file_name'"
+                taskkill //IM chrome.exe //F
+                log_action "Shutting down Chrome"
                 state=""
                 if grep -q "FAILED" "$report_file_path"; then 
                     destination="$FAILED_DIR"
@@ -162,10 +173,9 @@ if [[ -e .state ]]; then
 fi 
 
 touch .time
-> .time
+> .time # clear the file in case it has data from a previous run
 touch .current
-> .current
-echo 1 >> .state
+> .current # clear the file in case it has data from a previous run 
 
 log_action "Starting to monitor ~/Downloads"
 
@@ -180,10 +190,12 @@ while true; do
         elapsed_time=$(($t1 - $t0))
         elapsed_seconds=$(($elapsed_time / 1000))
         echo "elapsed time = $elapsed_seconds"
-        if [[ "$elapsed_seconds" -gt 1800 ]]; then 
-            last_test=$(tail -n 1 ".current")
+        last_test=$(tail -n 1 ".current")
+        if [[ "$elapsed_seconds" -gt 60 && -n "$last_test" ]]; then 
             echo "$last_test" >> "$TIMED_OUT_LIST"
-            log_action "Last test has timed out"
+            log_action "Last test has timed out; shutting down Chrome"
+            taskkill //IM chrome.exe //F
+            echo "$last_test timed out"
             echo "1" >> .state
         fi
     fi
