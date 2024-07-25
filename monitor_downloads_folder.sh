@@ -39,7 +39,6 @@ MASTER_LIST=".masterlist"
 touch "$LOCAL_LOG_FILE"
 > "$LOCAL_LOG_FILE"
 echo "$LOG_FILE" >> "$LOCAL_LOG_FILE"
-echo "Log file location saved"
 mkdir -p "$(dirname "$LOG_FILE")"
 mkdir -p "$(dirname "$TIMED_OUT_LIST")"
 mkdir -p "$FAILED_DIR"
@@ -65,10 +64,6 @@ upload_files() {
     local log_file="$1"
     local report_file="$2"
     local destination="$3"
-
-    echo ""
-    echo ""
-    echo "$destination"
 
     mkdir -p "$destination"
     mv "$log_file" "$destination/"
