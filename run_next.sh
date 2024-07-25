@@ -98,6 +98,7 @@ do_test() {
         echo "$last_line" >> .current
         echo "last line = $last_line"
         url=$(generate_hyperlink "$last_line" "$last_state")
+        sleep 3
         generate_hyperlink "$last_line" "$last_state" | xargs -n 1 start chrome
         echo "Starting Chrome..."
         set_time
