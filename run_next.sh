@@ -4,7 +4,7 @@ context="$1"
 run_name="$2"
 ./monitor_downloads_folder.sh "$context" "$run_name" &
 child_pid=$! 
-sleep 10
+sleep 12
 MASTER_LIST=".masterlist"
 ALL_LISTS=$(tail -n 1 "$MASTER_LIST")
 LOCAL_LOG_FILE=".logfilelocation"
@@ -48,7 +48,7 @@ cleanup() {
     echo "Cleaning up..."
     log_action "Shutting down scripts"
     kill "$child_pid"  
-    wait "$child_pid" 
+    exit 0
 }
 
 generate_hyperlink() {
@@ -80,7 +80,7 @@ generate_hyperlink() {
     
 }
 
-trap cleanup EXIT SIGINT
+trap "cleanup" EXIT SIGINT
 
 log_action "Starting a new test run"
 
@@ -94,16 +94,21 @@ do_test() {
     last_state="$1"
     log_action "Last test status = $last_state"
     last_line=$(get_last_line)
-    echo "$last_line" >> .current
-    url=$(generate_hyperlink "$last_line" "$last_state")
-    generate_hyperlink "$last_line" "$last_state" | xargs -n 1 start chrome
-    echo "Starting Chrome..."
-    set_time
-    sleep 3
-    log_action "$url"
-    echo "$last_state*" >> .state
-    log_action "Updated test status to $last_state*"
+    if [[ -n "$last_line" ]]; then 
+        echo "$last_line" >> .current
+        echo "last line = $last_line"
+        url=$(generate_hyperlink "$last_line" "$last_state")
+        generate_hyperlink "$last_line" "$last_state" | xargs -n 1 start chrome
+        echo "Starting Chrome..."
+        set_time
+        sleep 3
+        log_action "$url"
+        echo "$last_state*" >> .state
+        log_action "Updated test status to $last_state*"
+    fi
 }
+
+echo 1 >> .state
 
 while true; do
     last_test_state=$(get_most_recent_test_state)
