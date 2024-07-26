@@ -17,7 +17,6 @@ log_action() {
     local logLine="$1"
     local timestamp=$(date +"[%M:%H:%S %m-%d-%y]")
     echo "$timestamp $1" >> "$LOG_FILE"
-    return 1
 }
 
 get_last_line() {
@@ -25,6 +24,8 @@ get_last_line() {
         local message="Error: $ALL_LISTS is empty or does not exist."
      
         log_action "$message"
+
+        exit 1
     fi
 
     last_line=$(tail -n 1 "$ALL_LISTS")
@@ -90,50 +91,6 @@ set_time() {
     echo "$time" >> .time
 }
 
-do_test_with_url() {
-    url="$1"
-    log_action "URL is $url"
-    if [[ -n "$url" ]]; then 
-        echo "$url"
-    fi 
-}
-
-do_test() {
-    last_state="$1"
-    log_action "Last test status = $last_state"
-    last_line=$(get_last_line)
-    if [[ -n "$last_line" ]]; then 
-        echo "$last_line" >> .current
-        echo "last line = $last_line"
-        url=$(generate_hyperlink "$last_line" "$last_state")
-        sleep 3
-        #start chrome "$url"
-        echo "$url" >> .urls
-        echo "Starting Chrome..."
-        set_time
-        sleep 3
-        log_action "$url"
-        echo "$last_state*" >> .state
-        log_action "Updated test status to $last_state*"
-    fi
-}
-
-do_test_with_special_flag() {
-    last_state="$1"
-    log_action "Last test status = $last_state"
-    last_line=$(tail -n 1 .current)
-    $url=$(generate_hyperlink "$last_line" "$last_state")
-    echo "$url" >> .urls
-    sleep 3
-    #start chrome "$url"
-    echo "Starting Chrome..."
-    set_time
-    sleep 3
-    log_action "$url"
-    echo "$last_state*" >> .state
-    log_action "Updated test status to $last_state*"
-}
-
 echo 1 >> .state
 
 BASE_URL="https://paperapi.demo-classpad.net/fx-CG100-test/index.html"
@@ -150,6 +107,7 @@ while true; do
         last_line=$(get_last_line)
         echo "$last_line" >> .current
         url="$BASE_URL?test=$last_line&$OPTIONS_1&report_id=$id"
+        log_action "Going to $url"
         echo "$url" >> .urls
         start chrome "$url"
         set_time
@@ -160,6 +118,7 @@ while true; do
         last_line=$(tail -n 1 .current)
         echo "$last_line" >> .current
         url="$BASE_URL?test=$last_line&$OPTIONS_2&report_id=$id"
+        log_action "Going to $url"
         echo "$url" >> .urls
         start chrome "$url"
         set_time
@@ -170,6 +129,7 @@ while true; do
         last_line=$(tail -n 1 .current)
         echo "$last_line" >> .current
         url="$BASE_URL?test=$last_line&$OPTIONS_3&report_id=$id"
+        log_action "Going to $url"
         echo "$url" >> .urls
         start chrome "$url"
         set_time
@@ -180,6 +140,7 @@ while true; do
         last_line=$(tail -n 1 .current)
         echo "$last_line" >> .current
         url="$BASE_URL?test=$last_line&$OPTIONS_4&report_id=$id"
+        log_action "Going to $url"
         echo "$url" >> .urls
         start chrome "$url"
         set_time
@@ -190,6 +151,7 @@ while true; do
         last_line=$(tail -n 1 .current)
         echo "$last_line" >> .current
         url="$BASE_URL?test=$last_line&$OPTIONS_5&report_id=$id"
+        log_action "Going to $url"
         echo "$url" >> .urls
         start chrome "$url"
         set_time
