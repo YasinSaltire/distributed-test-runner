@@ -53,6 +53,8 @@ echo "$ALL_LISTS" >> "$MASTER_LIST"
 touch .urls
 > .urls
 touch "$FAILED_LIST" "$PASSED_LIST"
+mkdir -p "$FAILED_DIR"
+mkdir -p "$PASSED_DIR"
 
 log_action() {
     local logLine="$1"
