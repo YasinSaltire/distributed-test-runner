@@ -186,7 +186,7 @@ while true; do
         last_test=$(tail -n 1 ".current")
         if [[ "$elapsed_seconds" -gt 1800 && -n "$last_test" ]]; then 
             echo "$last_test" >> "$TIMED_OUT_LIST"
-            log_action "Last test has timed out ($elapsed_seconds s); shutting down Chrome"
+            log_action "Last test ($last_test) has timed out ($elapsed_seconds s); shutting down Chrome"
             taskkill //IM chrome.exe //F
             echo "$last_test timed out"
             echo "1" >> .state
