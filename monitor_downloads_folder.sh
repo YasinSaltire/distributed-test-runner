@@ -35,6 +35,7 @@ PASSED_DIR="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/passed"
 ALL_LISTS="$NETWORK_STORAGE/all-tests.txt"
 LOCAL_LOG_FILE=".logfilelocation"
 MASTER_LIST=".masterlist"
+mkdir -p ~/backup/passed ~/backup/failed
 > "$MASTER_LIST"
 touch "$LOCAL_LOG_FILE"
 > "$LOCAL_LOG_FILE"
@@ -49,6 +50,8 @@ touch .state
 > .state
 echo "1" >> .state
 echo "$ALL_LISTS" >> "$MASTER_LIST"
+touch .urls
+> .urls
 
 log_action() {
     local logLine="$1"
@@ -65,7 +68,6 @@ upload_files() {
     local report_file="$2"
     local destination="$3"
 
-    mkdir -p "$destination"
     mv "$log_file" "$destination/"
     mv "$report_file" "$destination/"
 
@@ -81,25 +83,26 @@ update_state() {
     third_attempt="3"
     fourth_attempt="4"
     fifth_attempt="5"
-    if [[ $state == "1*" ]]; then 
+    echo "updating from $state"
+    if [[ "$state" == "1*" ]]; then 
         log_action "First attempt failed; updating test status to run second attempt ($second_attempt)"
         echo "$second_attempt" >> .state
-    elif [[ $state == "2*" ]]; then
+    elif [[ "$state" == "2*" ]]; then
         log_action "Second attempt failed; updating test status to run third attempt ($third_attempt)"
         echo "$third_attempt" >> .state
-    elif [[ $state == "3*" ]]; then
+    elif [[ "$state" == "3*" ]]; then
         log_action "Third attempt failed; updating test status to run fourth attempt ($fourth_attempt)"
         echo "$fourth_attempt" >> .state
-    elif [[ $state == "4*" ]]; then
+    elif [[ "$state" == "4*" ]]; then
         log_action "Fourth attempt failed; updating test status to run fifth attempt ($fifth_attempt)"
         echo "$fifth_attempt" >> .state
-    elif [[ $state == "5*" ]]; then
+    elif [[ "$state" == "5*" ]]; then
         log_action "Fifth attempt failed; updating test status to run next test ($fourth_attempt)"
         echo "$start_next" >> .state
-    elif [[ $state == "passed" ]]; then
+    elif [[ "$state" == "passed" ]]; then
         log_action "Test passed; updating test status to run next test"
         echo "$start_next" >> .state
-    elif [[ $state == "timed-out" ]]; then
+    elif [[ "$state" == "timed-out" ]]; then
         log_action "Test timed-out; updating test status to run next test"
         echo "$start_next" >> .state
     fi
@@ -133,38 +136,23 @@ find_html_pairs() {
                     state="passed"
                 fi
                 echo "destination is $destination"
-                # upload_files "$report_file_path" "$log_file_path" "$destination"
+                upload_files "$report_file_path" "$log_file_path" "$destination"
                 update_state "$state"
             else
                 # report and log-pair not ready yet
                 echo "Log file '$file_name' found but report file '$report_file' is missing"
             fi
-        else
-            log_file="Log-$file_name"
-            log_file_path="$DOWNLOADS_DIR/$log_file"
-            last_test_state=$(tail -n 1 ".state")
-            log_action "Both files downloaded; last test state: $last_test_state"
-            
-            if [[ -f "$log_file_path" ]]; then
-                echo "Pair found: Log file '$log_file' and report file '$file_name'"
-                taskkill //IM chrome.exe //F
-                log_action "Shutting down Chrome"
-                state=""
-                if grep -q "FAILED" "$report_file_path"; then 
-                    destination="$FAILED_DIR"
-                    state="$last_test_state"
-                else 
-                    destination="$PASSED_DIR"
-                    state="passed"
-                fi
-                echo "destination is $destination"
-                # upload_files "$report_file_path" "$log_file_path" "$destination"
-                update_state "$state"
-            else
-                echo "Report file '$file_name' found but log file '$log_file' is missing"
-            fi
         fi
     done
+}
+
+number_of_html_files=$(ls -l "~/Downloads/*html" 2>/dev/null | wc -l)
+
+check_html_files() {
+    current_number_of_html_files=$(ls -l "~/Downloads/*html" 2>/dev/null | wc -l)
+    if [[ $(("$current_number_of_html_files" - "")) == "" ]]; then
+        echo ""
+    fi
 }
 
 if [[ -e .state ]]; then 
