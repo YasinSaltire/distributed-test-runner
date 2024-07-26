@@ -52,28 +52,28 @@ cleanup() {
 }
 
 generate_hyperlink() {
-    local last_line="$1"
-    local state=$2
-    local test_title
-    local id
-    local BASE_URL='https://paperapi.demo-classpad.net/fx-CG100-test/index.html'
-    local OPTIONS='stop_on_fail=Screen&annotated_log=true'
-    
-    
-    test_title=$(basename "${last_line//./_}")
-    # echo "Test title is $test_title"
+    line="$1"
+    state="$2"
+    BASE_URL="https://paperapi.demo-classpad.net/fx-CG100-test/index.html"
+    OPTIONS='stop_on_fail=Screen&annotated_log=true'
+    OPTIONS_1="stop_on_fail=Screen&annotated_log=true"
+    OPTIONS_2="stop_on_fail=Screen&annotated_log=true&ignore_status_bar=true"
+    OPTIONS_3="stop_on_fail=Screen&annotated_log=true&slo_mo=2"
+    OPTIONS_4="stop_on_fail=Screen&annotated_log=true&slo_mo=2&ignore_status_bar=true"
+    OPTIONS_5="stop_on_fail=Screen&annotated_log=true&slo_mo=3"
+
     id=$(date +"%Y-%m-%dT%H_%M_%SZ")
     
-    if [[ $state -eq 1 ]]; then
-        echo "${BASE_URL}?test=${last_line}&${OPTIONS}&report_id=${id}"
-    elif [[ $state -eq 2 ]]; then
-        echo "${BASE_URL}?test=${last_line}&${OPTIONS}&report_id=${id}&ignore_status_bar=true"
-    elif [[ $state -eq 3 ]]; then
-        echo "${BASE_URL}?test=${last_line}&${OPTIONS}&report_id=${id}&slo_mo=2"
-    elif [[ $state -eq 4 ]]; then
-        echo "${BASE_URL}?test=${last_line}&${OPTIONS}&report_id=${id}&slo_mo=2&ignore_status_bar=true"
-    elif [[ $state -eq 5 ]]; then
-        echo "${BASE_URL}?test=${last_line}&${OPTIONS}&report_id=${id}&slo_mo=3"
+    if [[ "$state" -eq 1 ]]; then
+        echo "$BASE_URL?test=$line&$OPTIONS&report_id=$id&x=1"
+    elif [[ "$state" -eq 2 ]]; then
+        echo "$BASE_URL?test=$line&$OPTIONS&report_id=$id&ignore_status_bar=true"
+    elif [[ "$state" -eq 3 ]]; then
+        echo "$BASE_URL?test=$line&$OPTIONS&report_id=$id&slo_mo=2"
+    elif [[ "$state" -eq 4 ]]; then
+        echo "$BASE_URL?test=$line&$OPTIONS&report_id=$id&slo_mo=2&ignore_status_bar=true"
+    elif [[ "$state" -eq 5 ]]; then
+        echo "$BASE_URL?test=$line&$OPTIONS&report_id=$id&slo_mo=3"
     else
         echo "Error"
     fi
@@ -90,6 +90,14 @@ set_time() {
     echo "$time" >> .time
 }
 
+do_test_with_url() {
+    url="$1"
+    log_action "URL is $url"
+    if [[ -n "$url" ]]; then 
+        echo "$url"
+    fi 
+}
+
 do_test() {
     last_state="$1"
     log_action "Last test status = $last_state"
@@ -99,7 +107,8 @@ do_test() {
         echo "last line = $last_line"
         url=$(generate_hyperlink "$last_line" "$last_state")
         sleep 3
-        generate_hyperlink "$last_line" "$last_state" | xargs -n 1 start chrome
+        #start chrome "$url"
+        echo "$url" >> .urls
         echo "Starting Chrome..."
         set_time
         sleep 3
@@ -109,28 +118,82 @@ do_test() {
     fi
 }
 
+do_test_with_special_flag() {
+    last_state="$1"
+    log_action "Last test status = $last_state"
+    last_line=$(tail -n 1 .current)
+    $url=$(generate_hyperlink "$last_line" "$last_state")
+    echo "$url" >> .urls
+    sleep 3
+    #start chrome "$url"
+    echo "Starting Chrome..."
+    set_time
+    sleep 3
+    log_action "$url"
+    echo "$last_state*" >> .state
+    log_action "Updated test status to $last_state*"
+}
+
 echo 1 >> .state
+
+BASE_URL="https://paperapi.demo-classpad.net/fx-CG100-test/index.html"
+OPTIONS_1="stop_on_fail=Screen&annotated_log=true"
+OPTIONS_2="stop_on_fail=Screen&annotated_log=true&ignore_status_bar=true"
+OPTIONS_3="stop_on_fail=Screen&annotated_log=true&slo_mo=2"
+OPTIONS_4="stop_on_fail=Screen&annotated_log=true&slo_mo=2&ignore_status_bar=true"
+OPTIONS_5="stop_on_fail=Screen&annotated_log=true&slo_mo=3"
 
 while true; do
     last_test_state=$(get_most_recent_test_state)
+    id=$(date +"%Y-%m-%dT%H_%M_%SZ")
     if [[ $last_test_state == 1 ]]; then 
-        do_test "$last_test_state"
+        last_line=$(get_last_line)
+        echo "$last_line" >> .current
+        url="$BASE_URL?test=$last_line&$OPTIONS_1&report_id=$id"
+        echo "$url" >> .urls
+        start chrome "$url"
+        set_time
+        echo "$last_test_state*" >> .state
     elif [[ $last_test_state == "1*" ]]; then
         echo "Test in progress"
     elif [[ $last_test_state == 2 ]]; then
-        do_test "$last_test_state"
+        last_line=$(tail -n 1 .current)
+        echo "$last_line" >> .current
+        url="$BASE_URL?test=$last_line&$OPTIONS_2&report_id=$id"
+        echo "$url" >> .urls
+        start chrome "$url"
+        set_time
+        echo "$last_test_state*" >> .state
     elif [[ $last_test_state == "2*" ]]; then
         echo "Test in progress"
     elif [[ $last_test_state == 3 ]]; then
-        do_test "$last_test_state"
+        last_line=$(tail -n 1 .current)
+        echo "$last_line" >> .current
+        url="$BASE_URL?test=$last_line&$OPTIONS_3&report_id=$id"
+        echo "$url" >> .urls
+        start chrome "$url"
+        set_time
+        echo "$last_test_state*" >> .state
     elif [[ $last_test_state == "3*" ]]; then
         echo "Test in progress"
     elif [[ $last_test_state == 4 ]]; then
-        do_test "$last_test_state"
+        last_line=$(tail -n 1 .current)
+        echo "$last_line" >> .current
+        url="$BASE_URL?test=$last_line&$OPTIONS_4&report_id=$id"
+        echo "$url" >> .urls
+        start chrome "$url"
+        set_time
+        echo "$last_test_state*" >> .state
     elif [[ $last_test_state == "4*" ]]; then
         echo "Test in progress"
     elif [[ $last_test_state == 5 ]]; then
-        do_test "$last_test_state"
+        last_line=$(tail -n 1 .current)
+        echo "$last_line" >> .current
+        url="$BASE_URL?test=$last_line&$OPTIONS_5&report_id=$id"
+        echo "$url" >> .urls
+        start chrome "$url"
+        set_time
+        echo "$last_test_state*" >> .state
     elif [[ $last_test_state == "5*" ]]; then
         echo "Test in progress"
     else 
