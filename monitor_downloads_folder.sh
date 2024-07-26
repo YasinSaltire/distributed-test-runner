@@ -35,6 +35,8 @@ PASSED_DIR="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/passed"
 ALL_LISTS="$NETWORK_STORAGE/all-tests.txt"
 LOCAL_LOG_FILE=".logfilelocation"
 MASTER_LIST=".masterlist"
+FAILED_LIST="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/failed-list.txt"
+PASSED_LIST="$NETWORK_STORAGE/$NICKNAME/$TIMESTAMP/passed-list.txt"
 mkdir -p ~/backup/passed ~/backup/failed
 > "$MASTER_LIST"
 touch "$LOCAL_LOG_FILE"
@@ -42,8 +44,6 @@ touch "$LOCAL_LOG_FILE"
 echo "$LOG_FILE" >> "$LOCAL_LOG_FILE"
 mkdir -p "$(dirname "$LOG_FILE")"
 mkdir -p "$(dirname "$TIMED_OUT_LIST")"
-mkdir -p "$FAILED_DIR"
-mkdir -p "$PASSED_DIR"
 touch "$LOG_FILE"
 touch "$TIMED_OUT_LIST"
 touch .state
@@ -52,6 +52,7 @@ echo "1" >> .state
 echo "$ALL_LISTS" >> "$MASTER_LIST"
 touch .urls
 > .urls
+touch "$FAILED_LIST" "$PASSED_LIST"
 
 log_action() {
     local logLine="$1"
@@ -128,12 +129,17 @@ find_html_pairs() {
                 last_test_state=$(tail -n 1 ".state")
                 log_action "Both files downloaded; last test state: $last_test_state"
                 state=""
+                current_test=$(tail -n 1 .current)
                 if grep -q "FAILED" "$report_file_path"; then 
                     destination="$FAILED_DIR"
                     state="$last_test_state"
+                    echo "$current_test" >> "$FAILED_LIST"
+                    log_action "$current_test failed"
                 else 
                     destination="$PASSED_DIR"
                     state="passed"
+                    echo "$current_test" >> "$PASSED_LIST"
+                    log_action "$current_test passed"
                 fi
                 echo "destination is $destination"
                 upload_files "$report_file_path" "$log_file_path" "$destination"
