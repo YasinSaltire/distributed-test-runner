@@ -150,7 +150,7 @@ find_html_pairs() {
                 last_test_state=$(tail -n 1 ".state")
                 log_action "Both files downloaded; last test state: $last_test_state"
                 state=""
-                current_test=$(tail -n 1 .current)
+                current_test=$(tail -n 2 ".current" | head -n 1)
                 if grep -q "FAILED" "$report_file_path"; then 
                     destination="$FAILED_DIR"
                     state="$last_test_state"
@@ -206,7 +206,7 @@ while true; do
         elapsed_time=$(($t1 - $t0))
         elapsed_seconds=$(($elapsed_time / 1000))
         echo "elapsed time = $elapsed_seconds"
-        last_test=$(tail -n 1 ".current")
+        last_test=$(tail -n 2 ".current" | head -n 1)
         if [[ "$elapsed_seconds" -gt 1800 && -n "$last_test" ]]; then 
             echo "$last_test" >> "$TIMED_OUT_LIST"
             log_action "Last test ($last_test) has timed out ($elapsed_seconds s); shutting down Chrome"
