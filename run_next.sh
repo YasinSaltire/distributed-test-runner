@@ -174,6 +174,8 @@ while true; do
         echo "Test in progress"
     elif [[ $last_test_state == 2 ]]; then
         last_line=$(tail -n 1 .current)
+        last_line_raw=$(tail -n 2 .current | head -n 1)
+        echo "$last_line_raw" >> .current
         echo "$last_line" >> .current
         url="$BASE_URL?test=$last_line&$OPTIONS_2&report_id=$id"
         log_action "Going to $url"
@@ -185,6 +187,8 @@ while true; do
         echo "Test in progress"
     elif [[ $last_test_state == 3 ]]; then
         last_line=$(tail -n 1 .current)
+        last_line_raw=$(tail -n 2 .current | head -n 1)
+        echo "$last_line_raw" >> .current
         echo "$last_line" >> .current
         url="$BASE_URL?test=$last_line&$OPTIONS_3&report_id=$id"
         log_action "Going to $url"
@@ -196,6 +200,8 @@ while true; do
         echo "Test in progress"
     elif [[ $last_test_state == 4 ]]; then
         last_line=$(tail -n 1 .current)
+        last_line_raw=$(tail -n 2 .current | head -n 1)
+        echo "$last_line_raw" >> .current
         echo "$last_line" >> .current
         url="$BASE_URL?test=$last_line&$OPTIONS_4&report_id=$id"
         log_action "Going to $url"
@@ -207,6 +213,8 @@ while true; do
         echo "Test in progress"
     elif [[ $last_test_state == 5 ]]; then
         last_line=$(tail -n 1 .current)
+        last_line_raw=$(tail -n 2 .current | head -n 1)
+        echo "$last_line_raw" >> .current
         echo "$last_line" >> .current
         url="$BASE_URL?test=$last_line&$OPTIONS_5&report_id=$id"
         log_action "Going to $url"
