@@ -1,5 +1,12 @@
 Important - need to download jq (https://jqlang.github.io/jq/download/) and Git Bash if running on Windows (https://git-scm.com/download/win)
 
+The script assumes that the executable is called/has been renamed to jq.exe. The original name may have some suffix to denote the architecture
+it was compiled for.
+
+Once jq.exe (also in this repo) has been downloaded, move it to its permanent location and add the executable's parent directory
+to Path in Windows' environment variables. Once "installed" restart git bash and run ```jq --version```. If the version isn't printed
+jq hasn't 
+
 Optionally create a .env file with a key value pair with key set as "machine_name". For logging purposes this will serve as a nickname
 to id the source machine
 
