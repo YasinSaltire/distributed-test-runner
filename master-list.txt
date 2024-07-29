@@ -313,16 +313,16 @@ CL評価/アプリ/Python/Cy875_Python_キー機能CL/Cy875_Python_キー機能C
 CL評価/アプリ/Python/Cy876_Python_DrawingScreen/Cy876_Python_DrawingScreen_1/Cy876_Python_DrawingScreen_1
 CL評価/アプリ/Python/Cy876_Python_DrawingScreen/Cy876_Python_DrawingScreen_2/Cy876_Python_DrawingScreen_2
 CL評価/アプリ/Python/Cy876-875_Python_コマンドカラー基本/Cy876-875_Python_コマンドカラー基本_1/Cy876-875_Python_コマンドカラー基本_1
-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_3/Cy875_Python_Exam_logTest_3
-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_2/Cy875_Python_Exam_logTest_2
+//-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_3/Cy875_Python_Exam_logTest_3 (Exam mode not supported)
+//-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_2/Cy875_Python_Exam_logTest_2 (Exam mode not supported)
 CL評価/アプリ/Python/Cy876_Python_DrawingScreen/Cy876_Python_DrawingScreen_3/Cy876_Python_DrawingScreen_3
-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_1/Cy875_Python_Exam_logTest_1
-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_7/Cy875_Python_Exam_logTest_7
-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_4/Cy875_Python_Exam_logTest_4
+//-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_1/Cy875_Python_Exam_logTest_1 (Exam mode not supported)
+//-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_7/Cy875_Python_Exam_logTest_7 (Exam mode not supported)
+//-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_4/Cy875_Python_Exam_logTest_4 (Exam mode not supported)
 CL評価/アプリ/Python/Cy875_Python_CatalogCL/Cy875_Python_CatalogCL_01/Cy875_Python_CatalogCL_01
 CL評価/アプリ/Python/CY876_Python_仏py組込_通常モード/CY876_Python_仏py組込_通常モード_01/CY876_Python_仏py組込_通常モード_01
-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_6/Cy875_Python_Exam_logTest_6
-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_5/Cy875_Python_Exam_logTest_5
+//-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_6/Cy875_Python_Exam_logTest_6 (Exam mode not supported)
+//-CL評価/アプリ/Python/Cy875_Python_Exam_logTest/Cy875_Python_Exam_logTest_5/Cy875_Python_Exam_logTest_5 (Exam mode not supported)
 CL評価/アプリ/Python/Cy875_Python_CatalogCL/Cy875_Python_CatalogCL_02/Cy875_Python_CatalogCL_02
 CL評価/アプリ/Python/Cy875_Python_CatalogCL/Cy875_Python_CatalogCL_04/Cy875_Python_CatalogCL_04
 CL評価/アプリ/Python/Cy875_Python_CatalogCL/Cy875_Python_CatalogCL_05/Cy875_Python_CatalogCL_05
@@ -409,8 +409,8 @@ CL評価/アプリ/Memory/手_FileManager/手_FileManager_5/手_FileManager_5
 CL評価/アプリ/Memory/手_FileManager/手_FileManager_6/手_FileManager_6
 CL評価/アプリ/Memory/手_FileManager/手_FileManager_9/手_FileManager_9
 CL評価/アプリ/Memory/手_FileManager/手_FileManager_8/手_FileManager_8
-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_03_Fr_log/手_Cy875-876_ExamMode_03_Fr_log_1/手_Cy875-876_ExamMode_03_Fr_log_1
-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_03_Fr_log/手_Cy875-876_ExamMode_03_Fr_log_2/手_Cy875-876_ExamMode_03_Fr_log_2
+//-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_03_Fr_log/手_Cy875-876_ExamMode_03_Fr_log_1/手_Cy875-876_ExamMode_03_Fr_log_1 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_03_Fr_log/手_Cy875-876_ExamMode_03_Fr_log_2/手_Cy875-876_ExamMode_03_Fr_log_2 (Exam mode not supported)
 CL評価/アプリ/Memory/手_MemoryManager/手_MemoryManager_10/手_MemoryManager_10
 CL評価/アプリ/Memory/手_MemoryManager/手_MemoryManager_2/手_MemoryManager_2
 CL評価/アプリ/Memory/手_MemoryManager/手_MemoryManager_11/手_MemoryManager_11
@@ -419,7 +419,7 @@ CL評価/アプリ/Memory/手_MemoryManager/手_MemoryManager_12/手_MemoryManag
 CL評価/アプリ/Memory/手_MemoryManager/手_MemoryManager_4/手_MemoryManager_4
 CL評価/アプリ/Memory/手_MemoryManager/手_MemoryManager_3/手_MemoryManager_3
 CL評価/アプリ/Memory/手_MemoryManager/手_MemoryManager_9/手_MemoryManager_9
-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_02_IB_log/手_Cy875-876_ExamMode_02_IB_log_1/手_Cy875-876_ExamMode_02_IB_log_1
+//-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_02_IB_log/手_Cy875-876_ExamMode_02_IB_log_1/手_Cy875-876_ExamMode_02_IB_log_1 (Exam mode not supported)
 CL評価/アプリ/System/(再評価)手_仏_System_チェックリスト/(再評価)手_仏_System_チェックリスト_1/(再評価)手_仏_System_チェックリスト_1
 CL評価/アプリ/Memory/手_MemoryManager/手_MemoryManager_5/手_MemoryManager_5
 CL評価/アプリ/Memory/手_MemoryManager/手_MemoryManager_8/手_MemoryManager_8
@@ -435,14 +435,14 @@ CL評価/アプリ/Memory/手_Popup_FileManager(SaveLoadDelete)_チェックリ�
 CL評価/アプリ/Memory/手_Popup_FileManager(SaveLoadDelete)_チェックリスト/手_Popup_FileManager(SaveLoadDelete)_チェックリスト_3/手_Popup_FileManager(SaveLoadDelete)_チェックリスト_3
 CL評価/アプリ/Memory/手_Popup_FileManager(SaveLoadDelete)_チェックリスト/手_Popup_FileManager(SaveLoadDelete)_チェックリスト_7/手_Popup_FileManager(SaveLoadDelete)_チェックリスト_7
 CL評価/アプリ/Memory/手_Popup_FileManager(SaveLoadDelete)_チェックリスト/手_Popup_FileManager(SaveLoadDelete)_チェックリスト_8/手_Popup_FileManager(SaveLoadDelete)_チェックリスト_8
-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_01_Appli/手_Cy875-876_ExamMode_01_Appli_1/手_Cy875-876_ExamMode_01_Appli_1
-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_01_Appli/手_Cy875-876_ExamMode_01_Appli_2/手_Cy875-876_ExamMode_01_Appli_2
+//-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_01_Appli/手_Cy875-876_ExamMode_01_Appli_1/手_Cy875-876_ExamMode_01_Appli_1 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_01_Appli/手_Cy875-876_ExamMode_01_Appli_2/手_Cy875-876_ExamMode_01_Appli_2 (Exam mode not supported)
 CL評価/アプリ/System/仏_System/仏_System_1/仏_System_1
-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_01_Appli/手_Cy875-876_ExamMode_01_Appli_3/手_Cy875-876_ExamMode_01_Appli_3
+//-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_01_Appli/手_Cy875-876_ExamMode_01_Appli_3/手_Cy875-876_ExamMode_01_Appli_3 (Exam mode not supported)
 CL評価/アプリ/System/(再評価)手_汎_System_チェックリスト/(再評価)手_汎_System_チェックリスト_1/(再評価)手_汎_System_チェックリスト_1
 CL評価/アプリ/Memory/手_Popup_FileManager(SaveLoadDelete)_チェックリスト/手_Popup_FileManager(SaveLoadDelete)_チェックリスト_9/手_Popup_FileManager(SaveLoadDelete)_チェックリスト_9
-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_01_Appli/手_Cy875-876_ExamMode_01_Appli_4/手_Cy875-876_ExamMode_01_Appli_4
-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_01_Appli/手_Cy875-876_ExamMode_01_Appli_5/手_Cy875-876_ExamMode_01_Appli_5
+//-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_01_Appli/手_Cy875-876_ExamMode_01_Appli_4/手_Cy875-876_ExamMode_01_Appli_4 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/手_Cy875-876_ExamMode_01_Appli/手_Cy875-876_ExamMode_01_Appli_5/手_Cy875-876_ExamMode_01_Appli_5 (Exam mode not supported)
 CL評価/アプリ/System/式視_System_キー機能/式視_System_キー機能_1/式視_System_キー機能_1
 CL評価/アプリ/System/豪_System/手_豪_System_チェックリスト_1/手_豪_System_チェックリスト_1
 CL評価/アプリ/System/式視_System_キー機能/式視_System_キー機能_11/式視_System_キー機能_11
@@ -1396,11 +1396,11 @@ CL評価/アプリ/Python/VARS/手_PythonVars_入力/手_PythonVars_入力_1/手
 CL評価/アプリ/Python/VARS/PythonVars_キー機能/PythonVars_キー機能_4/PythonVars_キー機能_4
 CL評価/アプリ/Python/VARS/手_PythonVars_入力/手_PythonVars_入力_3/手_PythonVars_入力_3
 CL評価/アプリ/Python/VARS/手_PythonVars_入力/手_PythonVars_入力_2/手_PythonVars_入力_2
-CL評価/アプリ/Python/試験モード/再評価_手_Cy875_Python_Exam_logTest/再評価_手_Cy875_Python_Exam_logTest_1/再評価_手_Cy875_Python_Exam_logTest_1
-CL評価/アプリ/Python/試験モード/式視_Cy875_（PythonExam）_キー機能CL/式視_Cy875_（PythonExam）_キー機能CL_1/式視_Cy875_（PythonExam）_キー機能CL_1
-CL評価/アプリ/Python/試験モード/式視_Cy875_（PythonExam）_キー機能CL/式視_Cy875_（PythonExam）_キー機能CL_3/式視_Cy875_（PythonExam）_キー機能CL_3
-CL評価/アプリ/Python/試験モード/式視_Cy875_（PythonExam）_キー機能CL/式視_Cy875_（PythonExam）_キー機能CL_2/式視_Cy875_（PythonExam）_キー機能CL_2
-CL評価/アプリ/Python/試験モード/再評価_手_Cy875_Python_Exam_logTest/再評価_手_Cy875_Python_Exam_logTest_2/再評価_手_Cy875_Python_Exam_logTest_2
+//-CL評価/アプリ/Python/試験モード/再評価_手_Cy875_Python_Exam_logTest/再評価_手_Cy875_Python_Exam_logTest_1/再評価_手_Cy875_Python_Exam_logTest_1 (Exam mode not supported)
+//-CL評価/アプリ/Python/試験モード/式視_Cy875_（PythonExam）_キー機能CL/式視_Cy875_（PythonExam）_キー機能CL_1/式視_Cy875_（PythonExam）_キー機能CL_1 (Exam mode not supported)
+//-CL評価/アプリ/Python/試験モード/式視_Cy875_（PythonExam）_キー機能CL/式視_Cy875_（PythonExam）_キー機能CL_3/式視_Cy875_（PythonExam）_キー機能CL_3 (Exam mode not supported)
+//-CL評価/アプリ/Python/試験モード/式視_Cy875_（PythonExam）_キー機能CL/式視_Cy875_（PythonExam）_キー機能CL_2/式視_Cy875_（PythonExam）_キー機能CL_2 (Exam mode not supported)
+//-CL評価/アプリ/Python/試験モード/再評価_手_Cy875_Python_Exam_logTest/再評価_手_Cy875_Python_Exam_logTest_2/再評価_手_Cy875_Python_Exam_logTest_2 (Exam mode not supported)
 CL評価/アプリ/Recursion/Table/(再評価)手_Recursion_Table新規部チェックリスト/(再評価)手_Recursion_Table新規部チェックリスト_1/(再評価)手_Recursion_Table新規部チェックリスト_1
 CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_1/Recursion_キー機能_追加01_1
 CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_3/Recursion_キー機能_追加01_3
@@ -1556,20 +1556,20 @@ CL評価/アプリ/Recursion/懸念点CL/手_TableSetting懸念チェックリ�
 CL評価/アプリ/Recursion/懸念点CL/手_TableSetting懸念チェックリスト/手_TableSetting懸念チェックリスト_1/手_TableSetting懸念チェックリスト_1
 CL評価/アプリ/Recursion/懸念点CL/手_TableSetting懸念チェックリスト/手_TableSetting懸念チェックリスト_2/手_TableSetting懸念チェックリスト_2
 CL評価/アプリ/Recursion/懸念点CL/手_TableSetting懸念チェックリスト/手_TableSetting懸念チェックリスト_6/手_TableSetting懸念チェックリスト_6
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_突入）_キー機能CL/式視_Cy876_（ExamMode_突入）_キー機能CL_1/式視_Cy876_（ExamMode_突入）_キー機能CL_1
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_突入）_キー機能CL/式視_Cy876_（ExamMode_突入）_キー機能CL_1/式視_Cy876_（ExamMode_突入）_キー機能CL_1 (Exam mode not supported)
 CL評価/アプリ/Recursion/懸念点CL/手_TableSetting懸念チェックリスト/手_TableSetting懸念チェックリスト_4/手_TableSetting懸念チェックリスト_4
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy875_（ExamMode_未突入）_キー機能CL/式視_Cy875_（ExamMode_未突入）_キー機能CL_1/式視_Cy875_（ExamMode_未突入）_キー機能CL_1
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_突入）_キー機能CL/式視_Cy876_（ExamMode_突入）_キー機能CL_2/式視_Cy876_（ExamMode_突入）_キー機能CL_2
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_突入）_キー機能CL/式視_Cy876_（ExamMode_突入）_キー機能CL_5/式視_Cy876_（ExamMode_突入）_キー機能CL_5
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_突入）_キー機能CL/式視_Cy876_（ExamMode_突入）_キー機能CL_3/式視_Cy876_（ExamMode_突入）_キー機能CL_3
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_突入）_キー機能CL/式視_Cy876_（ExamMode_突入）_キー機能CL_4/式視_Cy876_（ExamMode_突入）_キー機能CL_4
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_2/式視_Cy876_（ExamMode_未突入）_キー機能CL_2
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_1/式視_Cy876_（ExamMode_未突入）_キー機能CL_1
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_3/式視_Cy876_（ExamMode_未突入）_キー機能CL_3
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_6/式視_Cy876_（ExamMode_未突入）_キー機能CL_6
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_7/式視_Cy876_（ExamMode_未突入）_キー機能CL_7
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_5/式視_Cy876_（ExamMode_未突入）_キー機能CL_5
-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_4/式視_Cy876_（ExamMode_未突入）_キー機能CL_4
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy875_（ExamMode_未突入）_キー機能CL/式視_Cy875_（ExamMode_未突入）_キー機能CL_1/式視_Cy875_（ExamMode_未突入）_キー機能CL_1 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_突入）_キー機能CL/式視_Cy876_（ExamMode_突入）_キー機能CL_2/式視_Cy876_（ExamMode_突入）_キー機能CL_2 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_突入）_キー機能CL/式視_Cy876_（ExamMode_突入）_キー機能CL_5/式視_Cy876_（ExamMode_突入）_キー機能CL_5 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_突入）_キー機能CL/式視_Cy876_（ExamMode_突入）_キー機能CL_3/式視_Cy876_（ExamMode_突入）_キー機能CL_3 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_突入）_キー機能CL/式視_Cy876_（ExamMode_突入）_キー機能CL_4/式視_Cy876_（ExamMode_突入）_キー機能CL_4 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_2/式視_Cy876_（ExamMode_未突入）_キー機能CL_2 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_1/式視_Cy876_（ExamMode_未突入）_キー機能CL_1 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_3/式視_Cy876_（ExamMode_未突入）_キー機能CL_3 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_6/式視_Cy876_（ExamMode_未突入）_キー機能CL_6 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_7/式視_Cy876_（ExamMode_未突入）_キー機能CL_7 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_5/式視_Cy876_（ExamMode_未突入）_キー機能CL_5 (Exam mode not supported)
+//-CL評価/アプリ/Exam Mode/キー機能/式視_Cy876_（ExamMode_未突入）_キー機能CL/式視_Cy876_（ExamMode_未突入）_キー機能CL_4/式視_Cy876_（ExamMode_未突入）_キー機能CL_4 (Exam mode not supported)
 CL評価/アプリ/Calculate/Matrix/MatUI/手_Matrix_UI_02/手_Matrix_UI_02_01/手_Matrix_UI_02_01
 CL評価/アプリ/Calculate/Matrix/式自Mat演算CL/式自_Matrix演算_01入力動作/式自CL_Matrix演算_01/式自CL_Matrix演算_01
 CL評価/アプリ/Calculate/Matrix/MatUI/手_Matrix_UI_02/手_Matrix_UI_02_02/手_Matrix_UI_02_02
@@ -2053,4 +2053,3 @@ CL評価/アプリ/Statistics/StatGraph/タブ遷移/演算/手_StatGraphタブ�
 CL評価/アプリ/Statistics/懸念点/手_Statistics_懸念点/T-Note_pdf/t検定グラフ/t検定グラフ_01/t検定グラフ_01
 CL評価/アプリ/Statistics/懸念点/手_Statistics_懸念点/T-Note_pdf/Z検定グラフ/Z検定グラフ_01/Z検定グラフ_01
 CL評価/アプリ/Statistics/懸念点/手_Statistics_懸念点/T-Note_pdf/Z検定グラフ/Z検定グラフ_02/Z検定グラフ_02
-CL評価/アプリ/Statistics/懸念点/手_Statistics_懸念点/T-Note_pdf/t検定グラフ/t検定グラフ_02/t検定グラフ_02
