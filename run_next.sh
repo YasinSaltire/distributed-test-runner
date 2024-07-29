@@ -37,6 +37,34 @@ get_last_line() {
     echo "$last_line"
 }
 
+get_last_line_ext() {
+    if [[ ! -s "$ALL_LISTS" ]]; then
+        local message="Error: $ALL_LISTS is empty or does not exist."
+
+        log_action "$message"
+
+        exit 1
+    fi
+
+    while [[ -s "$ALL_LISTS" ]]; do
+        last_line=$(tail -n 1 "$ALL_LISTS")
+
+        if [[ "$last_line" =~ ^// ]]; then
+            log_action "Ignoring commented line: $last_line"
+            sed -i '$ d' "$ALL_LISTS"
+        else
+            last_line=$(urlencode "$last_line")
+            sed -i '$ d' "$ALL_LISTS"
+            log_action "Fetched and removed the last line from list: $last_line"
+            echo "$last_line"
+            return 0
+        fi
+    done
+
+    log_action "Error: $ALL_LISTS is empty or does not exist."
+    exit 1
+}
+
 get_most_recent_test_state() {
     echo $(tail -n 1 ".state")
 }
@@ -91,6 +119,12 @@ set_time() {
     echo "$time" >> .time
 }
 
+urlencode() {
+    local raw_string="$1"
+    local encoded_string=$(printf "$raw_string" | jq -sRr @uri)
+    echo "$encoded_string"
+}
+
 echo 1 >> .state
 
 BASE_URL="https://paperapi.demo-classpad.net/fx-CG100-test/index.html"
@@ -104,7 +138,7 @@ while true; do
     last_test_state=$(get_most_recent_test_state)
     id=$(date +"%Y-%m-%dT%H_%M_%SZ")
     if [[ $last_test_state == 1 ]]; then 
-        last_line=$(get_last_line)
+        last_line=$(get_last_line_ext)
         echo "$last_line" >> .current
         url="$BASE_URL?test=$last_line&$OPTIONS_1&report_id=$id"
         log_action "Going to $url"
