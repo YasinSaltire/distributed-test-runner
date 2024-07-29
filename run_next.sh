@@ -13,10 +13,29 @@ LOG_FILE=$(tail -n 1 "$LOCAL_LOG_FILE")
 mkdir -p "$(dirname "$LOG_FILE")"
 touch "$LOG_FILE"
 
+get_machine_name() {
+    local env_file=".env"
+    local key="machine_name"
+    local value=""
+
+    if [[ ! -f "$env_file" ]]; then
+        value="no-env"
+    fi 
+
+    value=$(grep -m 1 "^${key}=" "$env_file" | sed 's/^machine_name=//')
+
+    if [[ -z "$value" ]]; then 
+        value="name-not-set"
+    fi
+
+    echo "$value"
+}
+
 log_action() {
     local logLine="$1"
-    local timestamp=$(date +"[%M:%H:%S %m-%d-%y]")
-    echo "$timestamp $1" >> "$LOG_FILE"
+    local machine_name=$(get_machine_name)
+    local timestamp=$(date +"%H:%M:%S %m-%d-%y")
+    echo "[$timestamp $machine_name] $1" >> "$LOG_FILE"
 }
 
 get_last_line() {
