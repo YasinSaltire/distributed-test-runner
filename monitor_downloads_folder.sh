@@ -100,7 +100,7 @@ update_state() {
         log_action "Fourth attempt failed; updating test status to run fifth attempt ($fifth_attempt)"
         echo "$fifth_attempt" >> .state
     elif [[ "$state" == "5*" ]]; then
-        log_action "Fifth attempt failed; updating test status to run next test ($fourth_attempt)"
+        log_action "Fifth attempt failed; updating test status to run next test ($start_next)"
         echo "$start_next" >> .state
     elif [[ "$state" == "passed" ]]; then
         log_action "Test passed; updating test status to run next test"
@@ -135,7 +135,9 @@ find_html_pairs() {
                 if grep -q "FAILED" "$report_file_path"; then 
                     destination="$FAILED_DIR"
                     state="$last_test_state"
-                    echo "$current_test" >> "$FAILED_LIST"
+                    if [[ "$state" == "5*" ]]; then 
+                        echo "$current_test" >> "$FAILED_LIST"
+                    fi
                     log_action "$current_test failed"
                 else 
                     destination="$PASSED_DIR"
