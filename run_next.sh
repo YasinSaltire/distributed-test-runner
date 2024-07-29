@@ -38,7 +38,7 @@ log_action() {
     echo "[$timestamp $machine_name] $1" >> "$LOG_FILE"
 }
 
-get_last_line() {
+get_last_line_raw() {
     if [[ ! -s "$ALL_LISTS" ]]; then
         local message="Error: $ALL_LISTS is empty or does not exist."
      
@@ -160,7 +160,9 @@ while true; do
     last_test_state=$(get_most_recent_test_state)
     id=$(date +"%Y-%m-%dT%H_%M_%SZ")
     if [[ $last_test_state == 1 ]]; then 
+        last_line_raw=$(get_last_line_raw)
         last_line=$(get_last_line_ext)
+        echo "$last_line_raw" >> .current
         echo "$last_line" >> .current
         url="$BASE_URL?test=$last_line&$OPTIONS_1&report_id=$id"
         log_action "Going to $url"
