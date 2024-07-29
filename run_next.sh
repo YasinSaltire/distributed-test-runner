@@ -121,7 +121,10 @@ set_time() {
 
 urlencode() {
     local raw_string="$1"
+    log_action "Passing string through urlencode()..."
+    log_action "Original string was $raw_string"
     local encoded_string=$(printf "$raw_string" | jq -sRr @uri)
+    log_action "urlencoded string is $encoded_string"
     echo "$encoded_string"
 }
 
