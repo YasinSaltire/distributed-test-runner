@@ -56,11 +56,29 @@ touch "$FAILED_LIST" "$PASSED_LIST"
 mkdir -p "$FAILED_DIR"
 mkdir -p "$PASSED_DIR"
 
+get_machine_name() {
+    local env_file=".env"
+    local key="machine_name"
+    local value=""
+
+    if [[ ! -f "$env_file" ]]; then
+        value="no-env"
+    fi 
+
+    value=$(grep -m 1 "^${key}=" "$env_file" | sed 's/^machine_name=//')
+
+    if [[ -z "$value" ]]; then 
+        value="name-not-set"
+    fi
+
+    echo "$value"
+}
+
 log_action() {
     local logLine="$1"
-    local machine_name=$()
-    local timestamp=$(date +"[%H:%M:%S %m-%d-%y]")
-    echo "$timestamp $1" >> "$LOG_FILE"
+    local machine_name=$(get_machine_name)
+    local timestamp=$(date +"%H:%M:%S %m-%d-%y")
+    echo "[$timestamp $machine_name] $1" >> "$LOG_FILE"
 }
 
 get_most_recent_test_state() {
