@@ -58,7 +58,8 @@ mkdir -p "$PASSED_DIR"
 
 log_action() {
     local logLine="$1"
-    local timestamp=$(date +"[%M:%H:%S %m-%d-%y]")
+    local machine_name=$()
+    local timestamp=$(date +"[%H:%M:%S %m-%d-%y]")
     echo "$timestamp $1" >> "$LOG_FILE"
 }
 
