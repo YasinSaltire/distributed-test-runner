@@ -221,7 +221,7 @@ CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ロ�
 CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_09/ログ_Cy876-875_（Calculate）_キー機能_09
 CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_12/ログ_Cy876-875_（Calculate）_キー機能_12
 CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_13/ログ_Cy876-875_（Calculate）_キー機能_13
-CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_14/ログ_Cy876-875_（Calculate）_キー機能_14
+//-CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_14/ログ_Cy876-875_（Calculate）_キー機能_14 (Expected screen capture is blank)
 CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_17/ログ_Cy876-875_（Calculate）_キー機能_17
 CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_10/ログ_Cy876-875_（Calculate）_キー機能_10
 CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_16/ログ_Cy876-875_（Calculate）_キー機能_16
@@ -229,7 +229,7 @@ CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ロ�
 CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_20/ログ_Cy876-875_（Calculate）_キー機能_20
 CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_21/ログ_Cy876-875_（Calculate）_キー機能_21
 CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_18/ログ_Cy876-875_（Calculate）_キー機能_18
-CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_22/ログ_Cy876-875_（Calculate）_キー機能_22
+//-CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_22/ログ_Cy876-875_（Calculate）_キー機能_22 (Expected screen capture is blank)
 CL評価/アプリ/Calculate/ログ_Cy876-875_（Calculate）_キー機能/ログ_Cy876-875_（Calculate）_キー機能_15/ログ_Cy876-875_（Calculate）_キー機能_15
 CL評価/アプリ/Calculate/小数出力/式自CL_小数出力/式自CL_小数出力
 CL評価/アプリ/Calculate/Calculate_基本UI_3/Calculate_基本UI_3_1/Calculate_基本UI_3_1
@@ -571,11 +571,11 @@ CL評価/アプリ/Graph&Table/Graph/Graph描画/Graph描画_22/Graph描画_22
 CL評価/アプリ/Graph&Table/Graph/Graph描画/Graph描画_7/Graph描画_7
 CL評価/アプリ/Graph&Table/Graph/Graph描画/Graph描画_6/Graph描画_6
 CL評価/アプリ/Graph&Table/Graph/全関数グラフ描画/手_全関数グラフ描画_1/手_全関数グラフ描画_1
-CL評価/アプリ/Graph&Table/Graph/全関数グラフ描画/手_全関数グラフ描画_10/手_全関数グラフ描画_10
+//-CL評価/アプリ/Graph&Table/Graph/全関数グラフ描画/手_全関数グラフ描画_10/手_全関数グラフ描画_10 (Log goes to capture 0107 but Ans/Other/Screen only go to 0098)
 CL評価/アプリ/Graph&Table/Graph/Graph描画/Graph描画_9/Graph描画_9
 CL評価/アプリ/Graph&Table/Graph/Graph描画/Graph描画_8/Graph描画_8
 CL評価/アプリ/Graph&Table/Graph/全関数グラフ描画/手_全関数グラフ描画_12/手_全関数グラフ描画_12
-CL評価/アプリ/Graph&Table/Graph/全関数グラフ描画/手_全関数グラフ描画_11/手_全関数グラフ描画_11
+//-CL評価/アプリ/Graph&Table/Graph/全関数グラフ描画/手_全関数グラフ描画_11/手_全関数グラフ描画_11 (Uses Ran#)
 CL評価/アプリ/Graph&Table/Graph/全関数グラフ描画/手_全関数グラフ描画_2/手_全関数グラフ描画_2
 CL評価/アプリ/Graph&Table/Graph/全関数グラフ描画/手_全関数グラフ描画_3/手_全関数グラフ描画_3
 CL評価/アプリ/Graph&Table/Graph/全関数グラフ描画/手_全関数グラフ描画_13/手_全関数グラフ描画_13
@@ -1396,38 +1396,38 @@ CL評価/アプリ/Python/VARS/手_PythonVars_入力/手_PythonVars_入力_1/手
 //+CL評価/アプリ/Python/VARS/PythonVars_キー機能/PythonVars_キー機能_4/PythonVars_キー機能_4
 CL評価/アプリ/Python/VARS/手_PythonVars_入力/手_PythonVars_入力_3/手_PythonVars_入力_3
 //+CL評価/アプリ/Python/VARS/手_PythonVars_入力/手_PythonVars_入力_2/手_PythonVars_入力_2
-//-CL評価/アプリ/Python/試験モード/再評価_手_Cy875_Python_Exam_logTest/再評価_手_Cy875_Python_Exam_logTest_1/再評価_手_Cy875_Python_Exam_logTest_1 (Exam mode not supported)
-//-CL評価/アプリ/Python/試験モード/式視_Cy875_（PythonExam）_キー機能CL/式視_Cy875_（PythonExam）_キー機能CL_1/式視_Cy875_（PythonExam）_キー機能CL_1 (Exam mode not supported)
-//-CL評価/アプリ/Python/試験モード/式視_Cy875_（PythonExam）_キー機能CL/式視_Cy875_（PythonExam）_キー機能CL_3/式視_Cy875_（PythonExam）_キー機能CL_3 (Exam mode not supported)
-//-CL評価/アプリ/Python/試験モード/式視_Cy875_（PythonExam）_キー機能CL/式視_Cy875_（PythonExam）_キー機能CL_2/式視_Cy875_（PythonExam）_キー機能CL_2 (Exam mode not supported)
-//-CL評価/アプリ/Python/試験モード/再評価_手_Cy875_Python_Exam_logTest/再評価_手_Cy875_Python_Exam_logTest_2/再評価_手_Cy875_Python_Exam_logTest_2 (Exam mode not supported)
+//-CL評価/アプリ/Python/試験モード/再評価_手_Cy875_Python_Exam_logTest/再評価_手_Cy875_Python_Exam_logTest_1/再評価_手_Cy875_Python_Exam_logTest_1
+//-CL評価/アプリ/Python/試験モード/式視_Cy875_（PythonExam）_キー機能CL/式視_Cy875_（PythonExam）_キー機能CL_1/式視_Cy875_（PythonExam）_キー機能CL_1
+//-CL評価/アプリ/Python/試験モード/式視_Cy875_（PythonExam）_キー機能CL/式視_Cy875_（PythonExam）_キー機能CL_3/式視_Cy875_（PythonExam）_キー機能CL_3
+//-CL評価/アプリ/Python/試験モード/式視_Cy875_（PythonExam）_キー機能CL/式視_Cy875_（PythonExam）_キー機能CL_2/式視_Cy875_（PythonExam）_キー機能CL_2
+//-CL評価/アプリ/Python/試験モード/再評価_手_Cy875_Python_Exam_logTest/再評価_手_Cy875_Python_Exam_logTest_2/再評価_手_Cy875_Python_Exam_logTest_2
 //+CL評価/アプリ/Recursion/Table/(再評価)手_Recursion_Table新規部チェックリスト/(再評価)手_Recursion_Table新規部チェックリスト_1/(再評価)手_Recursion_Table新規部チェックリスト_1
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_1/Recursion_キー機能_追加01_1
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_3/Recursion_キー機能_追加01_3
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_1/Recursion_キー機能_追加01_1 (Expected screen capture is blank)
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_3/Recursion_キー機能_追加01_3 (Expected screen capture is blank)
 //+CL評価/アプリ/Recursion/Table/(再評価)手_Recursion_Table新規部チェックリスト/(再評価)手_Recursion_Table新規部チェックリスト_2/(再評価)手_Recursion_Table新規部チェックリスト_2
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_10/Recursion_キー機能_追加01_10
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_2/Recursion_キー機能_追加01_2
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_5/Recursion_キー機能_追加01_5
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_4/Recursion_キー機能_追加01_4
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_8/Recursion_キー機能_追加01_8
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_10/Recursion_キー機能_追加01_10 (Expected screen capture is blank)
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_2/Recursion_キー機能_追加01_2 (Expected screen capture is blank)
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_5/Recursion_キー機能_追加01_5 (Expected screen capture is blank)
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_4/Recursion_キー機能_追加01_4 (Expected screen capture is blank)
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_8/Recursion_キー機能_追加01_8 (Expected screen capture is blank)
 //+CL評価/アプリ/Recursion/Table/Recursion_Table新規部/Recursion_Table新規部_1/Recursion_Table新規部_1
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_7/Recursion_キー機能_追加01_7
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_6/Recursion_キー機能_追加01_6
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_7/Recursion_キー機能_追加01_7 (Expected screen capture is blank)
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_6/Recursion_キー機能_追加01_6 (Expected screen capture is blank)
 CL評価/アプリ/Recursion/Table/Recursion_Table新規部/Recursion_Table新規部_2/Recursion_Table新規部_2
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_9/Recursion_キー機能_追加01_9
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能_追加01/Recursion_キー機能_追加01_9/Recursion_キー機能_追加01_9 (Expected screen capture is blank)
 //+CL評価/アプリ/Recursion/Table/Recursion_Table新規部/Recursion_Table新規部_3/Recursion_Table新規部_3
 CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_1/Recursion_キー機能_1
 //+CL評価/アプリ/Recursion/Table/Recursion_Table新規部/Recursion_Table新規部_5/Recursion_Table新規部_5
 CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_11/Recursion_キー機能_11
 //+CL評価/アプリ/Recursion/Table/Recursion_Table新規部/Recursion_Table新規部_4/Recursion_Table新規部_4
 //+CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_10/Recursion_キー機能_10
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_16/Recursion_キー機能_16
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_16/Recursion_キー機能_16 (Expected screen capture is blank)
 CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_13/Recursion_キー機能_13
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_17/Recursion_キー機能_17
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_17/Recursion_キー機能_17 (Expected screen capture is blank)
 CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_14/Recursion_キー機能_14
 CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_15/Recursion_キー機能_15
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_18/Recursion_キー機能_18
-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_19/Recursion_キー機能_19
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_18/Recursion_キー機能_18 (Expected screen capture is blank)
+//-CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_19/Recursion_キー機能_19 (Expected screen capture is blank)
 //+CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_12/Recursion_キー機能_12
 CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_2/Recursion_キー機能_2
 CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キー機能_20/Recursion_キー機能_20
@@ -1450,7 +1450,7 @@ CL評価/アプリ/Recursion/キー機能/Recursion_キー機能/Recursion_キ�
 //+CL評価/アプリ/Recursion/Table/Recursion_Table従来部/Recursion_Table従来部_3/Recursion_Table従来部_3
 //+CL評価/アプリ/Recursion/Graph/(再評価)手_Recursion_DualGraph新規部チェックリスト/(再評価)手_Recursion_DualGraph新規部チェックリスト_2/(再評価)手_Recursion_DualGraph新規部チェックリスト_2
 //+CL評価/アプリ/Recursion/Table/Recursion_Table従来部/Recursion_Table従来部_6/Recursion_Table従来部_6
-CL評価/アプリ/Recursion/Table/Recursion_Table従来部/Recursion_Table従来部_5/Recursion_Table従来部_5
+// CL評価/アプリ/Recursion/Table/Recursion_Table従来部/Recursion_Table従来部_5/Recursion_Table従来部_5 (Uses Ran#)
 //+CL評価/アプリ/Recursion/Graph/Recursion_DualGraph従来部/Recursion_DualGraph従来部_2/Recursion_DualGraph従来部_2
 //+CL評価/アプリ/Recursion/Graph/V-Win反転(Recur)/V-Win反転(Recur)_1/V-Win反転(Recur)_1
 //+CL評価/アプリ/Recursion/Graph/Recursion_DualGraph従来部/Recursion_DualGraph従来部_1/Recursion_DualGraph従来部_1
@@ -1484,7 +1484,7 @@ CL評価/アプリ/Recursion/Graph/手_Recursion_DualGraph新規部チェック�
 //+CL評価/アプリ/Recursion/Graph/手_Recursion_PlotGraph新規部チェックリスト/手_Recursion_PlotGraph新規部チェックリスト_1/手_Recursion_PlotGraph新規部チェックリスト_1
 //+CL評価/アプリ/Recursion/Graph/手_Recursion_WebGraph従来部チェックリスト/手_Recursion_WebGraph従来部チェックリスト_1/手_Recursion_WebGraph従来部チェックリスト_1
 //+CL評価/アプリ/Recursion/Graph/手_Recursion_WebGraph従来部チェックリスト/手_Recursion_WebGraph従来部チェックリスト_4/手_Recursion_WebGraph従来部チェックリスト_4
-CL評価/アプリ/Recursion/Graph/手_Recursion_WebGraph従来部チェックリスト/手_Recursion_WebGraph従来部チェックリスト_3/手_Recursion_WebGraph従来部チェックリスト_3
+//-CL評価/アプリ/Recursion/Graph/手_Recursion_WebGraph従来部チェックリスト/手_Recursion_WebGraph従来部チェックリスト_3/手_Recursion_WebGraph従来部チェックリスト_3 (Uses Ran#)
 //+CL評価/アプリ/Recursion/Graph/手_Recursion_PlotGraph新規部チェックリスト/手_Recursion_PlotGraph新規部チェックリスト_10/手_Recursion_PlotGraph新規部チェックリスト_10
 //+CL評価/アプリ/Recursion/Graph/手_Recursion_PlotGraph新規部チェックリスト/手_Recursion_PlotGraph新規部チェックリスト_13/手_Recursion_PlotGraph新規部チェックリスト_13
 //+CL評価/アプリ/Recursion/Graph/手_Recursion_PlotGraph新規部チェックリスト/手_Recursion_PlotGraph新規部チェックリスト_11/手_Recursion_PlotGraph新規部チェックリスト_11
